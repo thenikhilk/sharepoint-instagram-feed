@@ -1,0 +1,1 @@
+{"version":3,"file":"InstagramPosts.d.ts","sourceRoot":"","sources":["../../../../src/webparts/instagramPosts/components/InstagramPosts.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAE/B,OAAO,EAAE,oBAAoB,EAAE,MAAM,wBAAwB,CAAC;AAG9D,MAAM,CAAC,OAAO,qBAAsB,SAAQ,KAAK,CAAC,SAAS,CAAC,oBAAoB,EAAE,EAAE,CAAC;IAC5E,MAAM,IAAI,KAAK,CAAC,YAAY,CAAC,oBAAoB,CAAC;CAkB1D"}
