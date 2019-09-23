@@ -1,3 +1,3 @@
 export interface IInstagramPostsProps {
-  description: string;
+  username: string;
 }

@@ -12,7 +12,7 @@ import InstagramPosts from './components/InstagramPosts';
 import { IInstagramPostsProps } from './components/IInstagramPostsProps';
 
 export interface IInstagramPostsWebPartProps {
-  description: string;
+  username: string;
 }
 
 export default class InstagramPostsWebPart extends BaseClientSideWebPart<IInstagramPostsWebPartProps> {
@@ -21,7 +21,7 @@ export default class InstagramPostsWebPart extends BaseClientSideWebPart<IInstag
     const element: React.ReactElement<IInstagramPostsProps > = React.createElement(
       InstagramPosts,
       {
-        description: this.properties.description
+        username: this.properties.username
       }
     );
 
@@ -47,7 +47,7 @@ export default class InstagramPostsWebPart extends BaseClientSideWebPart<IInstag
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
+                PropertyPaneTextField('username', {
                   label: strings.DescriptionFieldLabel
                 })
               ]
