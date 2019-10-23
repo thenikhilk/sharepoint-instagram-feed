@@ -2,17 +2,17 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "instagram-posts-web-part": {
+    "instagram-feed-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/instagramPosts/InstagramPostsWebPart.js",
-          "manifest": "./src/webparts/instagramPosts/InstagramPostsWebPart.manifest.json"
+          "entrypoint": "./lib/webparts/instagramFeed/InstagramFeedWebPart.js",
+          "manifest": "./src/webparts/instagramFeed/InstagramFeedWebPart.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "InstagramPostsWebPartStrings": "lib/webparts/instagramPosts/loc/{locale}.js"
+    "InstagramFeedWebPartStrings": "lib/webparts/instagramFeed/loc/{locale}.js"
   }
 }

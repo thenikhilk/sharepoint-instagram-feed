@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "ed33f1de-aa1c-4e68-bb4e-bc4835f865ea",
+  "alias": "InstagramFeedWebPart",
+  "componentType": "WebPart",
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "cf066440-0614-43d6-98ae-0b31cf14c7c3", // Text, media, and content
+      "group": {
+        "default": "TheNikhilK"
+      },
+      "title": {
+        "default": "Instagram Feed"
+      },
+      "description": {
+        "default": "Embed Instagram account feed on SharePoint Pages."
+      },
+      "iconImageUrl": "data:image/png;base64,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",
+      "properties": {
+        "username": "thenikhilk",
+        "showAlias": true
+      }
+    }
+  ]
+}

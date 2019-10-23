@@ -1,14 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "thenikhilk-instagram-feed-client-side-solution",
-    "id": "c95b3e86-2634-492b-a6fc-b30eb16510be",
+    "name": "thenikhilk-sp-ig-feed-client-side-solution",
+    "id": "2d0ddffd-2b2b-497c-8ed7-f52d1bbd4d48",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
-    "isDomainIsolated": true
+    "isDomainIsolated": false
   },
   "paths": {
-    "zippedPackage": "solution/thenikhilk-instagram-feed.sppkg"
+    "zippedPackage": "solution/thenikhilk-sp-ig-feed.sppkg"
   }
 }

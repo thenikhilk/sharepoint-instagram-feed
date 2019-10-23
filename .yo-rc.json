@@ -3,10 +3,10 @@
     "isCreatingSolution": true,
     "environment": "spo",
     "version": "1.9.1",
-    "libraryName": "thenikhilk-instagram-feed",
-    "libraryId": "c95b3e86-2634-492b-a6fc-b30eb16510be",
+    "libraryName": "thenikhilk-sp-ig-feed",
+    "libraryId": "2d0ddffd-2b2b-497c-8ed7-f52d1bbd4d48",
     "packageManager": "npm",
-    "isDomainIsolated": true,
+    "isDomainIsolated": false,
     "componentType": "webpart"
   }
 }
