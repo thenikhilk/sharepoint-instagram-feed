@@ -74,14 +74,13 @@ const classNames = mergeStyleSets({
   }
 });
 
-export default class InstagramFeed extends React.Component<IInstagramFeedProps, { error: IError, isLoaded: Boolean, items: IInstagramFeed, hasNextPage: Boolean }> {
+export default class InstagramFeed extends React.Component<IInstagramFeedProps, { error: IError, isLoaded: Boolean, items: IInstagramFeed }> {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      items: null,
-      hasNextPage: false
+      items: null
     };
   }
 
@@ -141,12 +140,6 @@ export default class InstagramFeed extends React.Component<IInstagramFeedProps, 
 
   public componentDidMount() {
     this._loadData();
-  }
-
-  public componentDidUpdate(prevProps, prevState) {
-    if (this.props.username !== prevProps.username) {
-      this._loadData();
-    }
   }
 
   private _loadingShimmer = (): JSX.Element => {

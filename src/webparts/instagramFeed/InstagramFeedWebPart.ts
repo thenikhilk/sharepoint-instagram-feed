@@ -19,6 +19,7 @@ export interface IInstagramFeedWebPartProps {
 export default class InstagramFeedWebPart extends BaseClientSideWebPart<IInstagramFeedWebPartProps> {
 
   public render(): void {
+    // tslint:disable-next-line: no-shadowed-variable
     const element: React.ReactElement<IInstagramFeedProps> = React.createElement(
       InstagramFeed,
       {
@@ -36,6 +37,15 @@ export default class InstagramFeedWebPart extends BaseClientSideWebPart<IInstagr
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
+  }
+
+  protected get disableReactivePropertyChanges(): boolean {
+    return true;
+  }
+
+  protected onAfterPropertyPaneChangesApplied(): void {
+    ReactDom.unmountComponentAtNode(this.domElement);
+    this.render();
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
