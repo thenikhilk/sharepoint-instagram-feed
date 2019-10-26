@@ -9,6 +9,10 @@ This webpart enables Office 365 SharePoint users to embed instagram feeds from a
 - [Installation Guide](documentation/installation-guide.md "Installation Guide")
 - [Developer Guide](documentation/developer-guide.md "Developer Guide")
 
+## Nest Steps
+
+App to be soon available from Microsoft Store.
+
 ## License
 
 [MIT](LICENSE)
