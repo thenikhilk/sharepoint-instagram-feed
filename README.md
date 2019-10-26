@@ -11,4 +11,4 @@ This webpart enables Office 365 SharePoint users to embed instagram feeds from a
 
 ## License
 
-- [MIT](LICENSE)
+[MIT](LICENSE)
