@@ -1,26 +1,14 @@
-## thenikhilk-sp-ig-feed
+# SharePoint Instagram feed Webpart
 
-This is where you include your WebPart documentation.
+![Logo](documentation\assets\tnk-sp-ig-feed.png "Logo")
 
-### Building the code
+This webpart enable Office 365 SharePoint users to embed instagram feeds from any public Instagram account to SharePoint pages seamlessly without the need for registering any ACCESS_KEY, TOKEN or client applications.
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
+## Documentation
 
-This package produces the following:
+- [Installation Guide](documentation\installation-guide.md "Installation Guide")
+- [Developer Guide](documentation\developer-guide.md "Developer Guide")
 
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
+## License
 
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+- [MIT](LICENSE)
