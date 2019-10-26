@@ -31,4 +31,4 @@ Download the latest version of the SharePoint App (`*.sppkg`) from [releases](ht
 
 ## Questions
 
-Feel free to log issue in the [GitHub repo](https://github.com/thenikhilk/sharepoint-instagram-feed/issues).
+Feel free to an log issue in the [GitHub repo](https://github.com/thenikhilk/sharepoint-instagram-feed/issues).
