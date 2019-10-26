@@ -26,8 +26,8 @@ steps:
 - task: CopyFiles@2
   inputs:
     Contents: |
-      temp/deploy
-      **/*.sppkg
+      temp/deploy/
+      sharepoint/solution/*.sppkg
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     CleanTargetFolder: true
     OverWrite: true
