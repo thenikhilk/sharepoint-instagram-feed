@@ -4,7 +4,7 @@
 
 ![Logo](documentation/assets/tnk-sp-ig-feed.png "Logo")
 
-This web part enables Office 365 SharePoint users to embed instagram feeds from any public Instagram account to SharePoint pages seamlessly with **NO NEED** for registering any **ACCESS_KEY**, **TOKEN** or **client applications**.
+This web part enables Office 365 SharePoint users to embed Instagram feeds from any public Instagram account to SharePoint pages seamlessly with **NO NEED** for registering any **ACCESS_KEY**, **TOKEN** or **client applications**.
 
 ## Documentation
 
