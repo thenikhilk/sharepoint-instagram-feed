@@ -15,10 +15,6 @@ This web part enables Office 365 SharePoint users to embed Instagram feeds from 
 
 ![Demo](documentation/assets/demo.gif "Demo")
 
-## Next Steps
-
-App to be soon available from Microsoft Store.
-
 ## License
 
 [MIT](LICENSE)
