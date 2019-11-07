@@ -34,6 +34,12 @@ gulp bundle --ship
 gulp package-solution --ship
 ```
 
+**OR**
+
+``` powershell
+npm run package
+```
+
 Files to deploy will be available at path `temp\deploy` and the package(*.sppkg) will be available at `sharepoint\solution` path.
 
 Make sure to update the `cdnBasePath` at `config\write-manifests.json` before deployment to the location where you have deployed your assets.
