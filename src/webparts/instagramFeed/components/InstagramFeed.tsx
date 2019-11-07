@@ -12,6 +12,7 @@ import { ITheme, getTheme, mergeStyleSets } from 'office-ui-fabric-react/lib/Sty
 import * as strings from 'InstagramFeedWebPartStrings';
 import { IInstagramFeed, Edge } from '../../../models/IInstagramFeed';
 import { IError } from '../../../models/IError';
+import * as $ from "jquery";
 
 const shimmerWrapperClass = mergeStyles({
   padding: 2,
@@ -84,58 +85,87 @@ export default class InstagramFeed extends React.Component<IInstagramFeedProps, 
     };
   }
 
+  private handleSuccess(success) {
+    let regex = /_sharedData = ({.*);<\/script>/m;
+    // let json = JSON.parse(regex.exec(success)[1]);
+    let json = JSON.parse(success);
+    if (json && json.graphql && json.graphql.user) {
+      let data = json;
+      this.setState({
+        isLoaded: true,
+        items: data,
+        error: null
+      });
+      this.render();
+    }
+  }
+
+  private handleFailure(error) {
+    let failure: IError = {
+      heading: strings.ErrorHeading,
+      message: strings.ErrorMessage,
+      status: error
+    };
+    // show error
+    this.setState({
+      items: null,
+      isLoaded: true,
+      error: failure
+    });
+  }
+
+  private getData(count) {
+    var params = {
+      url: `https://www.instagram.com/${this.props.username ? this.props.username.trim() : strings.DefaultUsername}/?__a=1`,
+      container: 'none'
+    };
+
+    var esc = encodeURIComponent;
+    var query = Object.keys(params)
+      .map(k => esc(k) + '=' + esc(params[k]))
+      .join('&');
+
+    let dataURL: string = `https://images${~~(Math.random() * 33)}-focus-opensocial.googleusercontent.com/gadgets/proxy?${query}`;
+    // let dataURL: string = `https://images${~~(Math.random() * 33)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/${this.props.username ? this.props.username.trim() : strings.DefaultUsername}/?__a=1`;
+    try {
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', dataURL);
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          this.handleSuccess(xhr.responseText);
+        } else if (xhr.status === 404) {
+          this.handleFailure(xhr.status);
+        } else {
+          this.getData(1);
+        }
+      };
+      xhr.send();
+    } catch (exception) {
+      if (0 === count) {
+        this.getData(1);
+      } else {
+        throw exception;
+      }
+    }
+  }
+
   private async _loadData() {
-    await fetch(`https://images${~~(Math.random() * 33)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/${this.props.username ? this.props.username : strings.DefaultUsername}`,
-      {
-        method: "GET",
-      })
-      .then(async (response) => {
-        let responseText = await response.text();
-        let regex = /_sharedData = ({.*);<\/script>/m,
-          json = JSON.parse(regex.exec(responseText)[1]),
-          data = json.entry_data.ProfilePage[0];
-        return data;
-      })
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result,
-            error: null
-          });
-          this.render();
-        },
-        (error) => {
-          let failure: IError = {
-            heading: strings.ErrorHeading,
-            message: strings.ErrorMessage,
-            status: 404,
-            error: error
-          };
-          // show error
-          this.setState({
-            items: null,
-            isLoaded: true,
-            error: failure
-          });
-        }
-      )
-      .catch(
-        (exception) => {
-          let failure: IError = {
-            heading: strings.ExceptionHeading,
-            message: strings.ExceptionMessage,
-            status: 500,
-            error: exception
-          };
-          // show exception
-          this.setState({
-            items: null,
-            isLoaded: true,
-            error: failure
-          });
-        }
-      );
+    try {
+      this.getData(0);
+    } catch (exception) {
+      console.warn(`${exception.code}-${exception.name}: ${exception.message}`);
+      let failure: IError = {
+        heading: strings.ExceptionHeading,
+        message: strings.ExceptionMessage,
+        status: 500
+      };
+      // show exception
+      this.setState({
+        items: null,
+        isLoaded: true,
+        error: failure
+      });
+    }
   }
 
   public componentDidMount() {
@@ -159,7 +189,7 @@ export default class InstagramFeed extends React.Component<IInstagramFeedProps, 
   }
 
   private _errorNotification = (): JSX.Element => {
-    console.error(this.state.error.error);
+    console.error(`${this.state.error.status}: ${this.state.error.message}`);
     return (
       <MessageBar
         messageBarType={MessageBarType.error}

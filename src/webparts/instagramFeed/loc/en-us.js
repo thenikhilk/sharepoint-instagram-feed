@@ -9,7 +9,7 @@ define([], function () {
     "ShowAliasToggleFalseLabel": "No",
     "ToggleExpandText": "See more",
     "ToggleCollapseText": "Close",
-    "ExceptionHeading": "An error occurred",
+    "ExceptionHeading": "An exception occurred",
     "ExceptionMessage": "Failed to load data, please check WebPart settings or try again later.",
     "ErrorHeading": "An error occurred",
     "ErrorMessage": "Failed to load data, please check WebPart settings or try again later."

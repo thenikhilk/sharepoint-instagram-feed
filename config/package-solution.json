@@ -3,9 +3,10 @@
   "solution": {
     "name": "Instagram Feed",
     "id": "2d0ddffd-2b2b-497c-8ed7-f52d1bbd4d48",
-    "version": "1.0.0.0",
+    "version": "1.0.1.0",
     "includeClientSideAssets": true,
-    "skipFeatureDeployment": true
+    "skipFeatureDeployment": true,
+    "iconPath": "images/tnk-sp-ig-feed-icon.png"
   },
   "paths": {
     "zippedPackage": "solution/thenikhilk-sp-ig-feed.sppkg"
