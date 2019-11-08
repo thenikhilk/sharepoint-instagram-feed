@@ -34,7 +34,7 @@ gulp bundle --ship
 gulp package-solution --ship
 ```
 
-**OR**
+### OR
 
 ``` powershell
 npm run package
