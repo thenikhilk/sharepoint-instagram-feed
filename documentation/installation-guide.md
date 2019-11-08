@@ -16,7 +16,6 @@ Download the latest version of the SharePoint App (`*.sppkg`) from [releases](ht
 1. Go to the SharePoint admin page. Go to the apps section and click on the Apps Catalog (if the Apps Catalog do not exist, create it).
 2. In the Apps Catalog, go to the Apps for SharePoint section.
 3. Drag & Drop the downloaded `thenikhilk-sp-ig-feed.sppkg` file in the Apps list. Wait during the deployment and verify that the package is correctly installed.
-4. Make a note of the URL shown while deploying and ensure it is accessible from your site since the Web Part will load assets from this CDN.
 
 ![App Catalog](assets/app-catalog.png "App Catalag")
 
